@@ -1,0 +1,16 @@
+SHARED CODE — shared/validation.js
+function validateJob(job) {
+  if (!job.title || !job.company) return false;
+  return true;
+}
+module.exports = { validateJob };
+
+
+⚡ SETUP FILE — setup.js
+import { execSync } from "child_process";
+
+console.log("Setting up Job Tracker...");
+execSync("cd backend && npm install", { stdio: "inherit" });
+execSync("cd frontend && npm install", { stdio: "inherit" });
+console.log("✅ Setup complete!");
+
